@@ -1,0 +1,203 @@
+@font-face {
+
+  font-family: Nunito-Bold;
+
+  src: url('assets/myfont/Nunito-Bold.ttf');
+}
+
+@font-face {
+
+  font-family: Product Sans;
+
+  src: url('assets/myfont/psans.ttf');
+}
+
+@font-face {
+
+  font-family: Product Sans-Bold;
+
+  src: url('assets/myfont/psans-bold.ttf');
+}
+
+@font-face {
+
+  font-family: Karla-Bold;
+
+  src: url('assets/myfont/Karla-Bold.ttf');
+}
+
+@font-face {
+
+  font-family: Lato-Bold;
+
+  src: url('assets/myfont/Lato/Lato-Bold.ttf');
+}
+
+@font-face {
+
+  font-family: Montserrat;
+
+  src: url('assets/myfont/Montserrat-Medium.ttf');
+}
+
+/* Body */
+
+body {
+
+  background-color: #fff;
+
+  font-family: 'Product Sans', sans-serif !important;
+
+}
+
+.css-4b1w4m {
+
+  min-height: 100vh;
+
+  -webkit-padding-start: 0px !important;
+
+  padding-inline-start: 0px !important;
+
+  -webkit-padding-end: 0px !important;
+
+  padding-inline-end: 0px !important;
+
+}
+
+.home-top {
+
+  display: block;
+
+  background-color: #dbf1ff;
+
+}
+
+.h-bold {
+
+  font-weight: 600 !important;
+
+  line-height: 40px;
+}
+
+.ms-n5 {
+
+  margin-left: -40px;
+
+}
+
+.txt-btn {
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  font-family: 'Product Sans', sans-serif;
+
+}
+
+.rounded {
+
+  border-radius: 20px !important;
+
+  padding-right: 15px;
+
+  padding-left: 15px;
+
+}
+
+.btn-in {
+
+  position: absolute;
+
+  right: 20px;
+
+  top: 12px;
+
+  z-index: 100;
+
+}
+
+input {
+
+  box-shadow: none !important;
+
+  font-size: 14px !important;
+
+}
+
+.s-round {
+
+  border-radius: 20px !important;
+
+  border: 1px solid #1b4a78 !important;
+
+  padding: 15px;
+
+}
+
+.img-home {
+
+  width: 500px;
+
+  height: 500px;
+
+  margin-top: -100px;
+
+}
+
+/* Section Others */
+
+.cen-round {
+
+  background-color: #fff !important;
+
+  border-radius: 8px;
+
+  margin-top: -40px;
+
+  text-align: center;
+
+}
+
+.others span {
+
+  font-weight: 400;
+
+  font-size: large;
+
+}
+
+.h-bold-2 {
+
+  font-family: Karla-Bold;
+}
+
+.text-bold {
+
+  font-weight: 600;
+
+}
+
+.inner-box {
+
+  transition: all 0.3s;
+
+  height: 230px;
+
+}
+
+.inner-box:hover {
+
+  transform: translateY(-5px);
+
+  transition: all 0.3s;
+
+  box-shadow: x1;
+
+}
+
+.inner-box p.text-muted {
+
+  font-size: 14px;
+
+}
