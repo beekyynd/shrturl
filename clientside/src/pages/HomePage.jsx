@@ -29,11 +29,13 @@ const HomePage = () => {
 
   const generateShortLink = () => {
 
-    let characters = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+    let characters = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz"; // string to generate from
+ 
+    let lenString = 5; // short link length
 
-    let lenString = 5;
+    let randomstring = ''; // initially set to empty
 
-    let randomstring = '';
+    // loop through to pick a new string each time
 
     for (let i = 0; i < lenString; i++) {
 
@@ -43,6 +45,8 @@ const HomePage = () => {
 
     }
 
+    // return the value of the short link generated
+
     return randomstring;
 
   };
@@ -51,15 +55,29 @@ const HomePage = () => {
 
   const handleAddLink = async () => {
 
-    try {
+    // validate that link box is not empty
 
+    if (!newLink.url.trim()) {
+    
+      toast({
+      
+      title: "Error",
+      description: "Enter all fields",
+      status: "error",
+      isClosable: true,
+      });
+
+      return;
+      
+      } 
+
+    try {
+  
       // Generate the short link when the button is clicked
 
       const generatedLink = generateShortLink();
 
       setNewLink((prev) => ({ ...prev, short: generatedLink }));
-
-      setIsLinkGenerated(true);
 
       const { success, message } = await createLink({ ...newLink, short: generatedLink });
     
@@ -86,6 +104,8 @@ const HomePage = () => {
     });
 
     }
+
+    setIsLinkGenerated(true); // Set to true after successfully saved in the db
     
     
     }
@@ -133,9 +153,7 @@ const HomePage = () => {
        <br/>
 
        <input className="form-control s-round" type="text" name='short' 
-       
-       placeholder='Short link will show here'
-
+      
        value={newLink.short}
 							
        onChange={(e) => setNewLink({ ...newLink, short: e.target.value })}
