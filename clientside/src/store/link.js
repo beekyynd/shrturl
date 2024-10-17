@@ -59,7 +59,7 @@ export const useLinkStore = create((set) => ({
 
             // Redirect the user to the target URL if it exists
 
-            window.location.href = data.data;
+            window.location.href = data.data.url;
 
           } else {
 

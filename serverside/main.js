@@ -1,7 +1,5 @@
 import express from "express";
 
-import cors from 'cors';
-
 import dotenv from "dotenv";
 
 import path from "path";
@@ -13,8 +11,6 @@ import linkRoutes from "./routes/link.route.js"
 dotenv.config();
 
 const app = express();
-
-app.use(cors());
 
 app.use(express.json()); // allows us to accept JSON data in the req.body
 

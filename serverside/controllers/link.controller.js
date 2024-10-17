@@ -170,7 +170,7 @@ export const redirectToTarget = async (req, res) => {
 
       // Redirect the user to the absolute target URL
 
-      return res.status(302).redirect(targetUrl);
+      return res.redirect(targetUrl);
    
       } 
       
