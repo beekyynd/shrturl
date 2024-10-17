@@ -112,7 +112,13 @@ const HomePage = () => {
 
     catch (error) {
 
-      toast.error("An error occurred while creating the link.");
+      toast({
+    
+        title: "Error",
+        description: error,
+        status: "error",
+        isClosable: true,
+        });
 
     }
 
@@ -123,6 +129,8 @@ const HomePage = () => {
 
     
   <>
+
+  {/* Top Section */}
 
   <section className='home-top'>
   
@@ -161,6 +169,8 @@ const HomePage = () => {
        hidden
        
        />
+
+{/* Generate link button */}
             
             <div className="btn-in">
                                   
@@ -185,10 +195,14 @@ const HomePage = () => {
     </div>
 
     </section>
+  
+    {/* New Section */}
 
     <section className="others mb-5">
 
       <div className='col-lg-6 col-md-6 col-sm-6 cen-round mx-auto shadow'>
+
+      {/* Container that shows generated link */}
 
         <div className='p-4'>
 
@@ -201,6 +215,8 @@ const HomePage = () => {
         </div>
         
       </div>
+
+      {/* New container */}
 
       <div className='container'>
 

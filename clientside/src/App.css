@@ -145,6 +145,18 @@ input {
 
 }
 
+@media screen and (max-width: 400px) {
+
+  .img-home {
+
+    height: 400px;
+
+    margin-top: -50px;
+    
+  }
+  
+}
+
 /* Section Others */
 
 .cen-round {

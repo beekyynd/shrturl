@@ -143,3 +143,46 @@ export const deleteLink = async (req, res) => {
             message: "Server Error" });
 	}
 };
+
+export const redirectToTarget = async (req, res) => {
+
+    const { short } = req.params;
+  
+    try {
+
+      // Find the link by its short identifier
+
+      const link = await Link.findOne({ short });
+
+      if (!link) {
+
+        return res.status(404).json({ error: "URL not found" });
+
+      }
+  
+      let targetUrl = link.url;
+
+      if (!/^https?:\/\//i.test(targetUrl)) {
+
+        targetUrl = `https://${targetUrl}`; // You can use https if that's preferable
+
+      }
+
+      // Redirect the user to the absolute target URL
+
+      return res.status(302).redirect(targetUrl);
+   
+      } 
+      
+    
+    catch (error) {
+
+      console.error("Error in redirecting:", error);
+
+      return res.status(500).json({ 
+        
+        success: false, 
+        
+        message: "Server error." });
+    }
+  };
