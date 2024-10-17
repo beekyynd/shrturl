@@ -62,7 +62,7 @@ const HomePage = () => {
       toast({
       
       title: "Error",
-      description: "Enter all fields",
+      description: "You have to paste a link",
       status: "error",
       isClosable: true,
       });
