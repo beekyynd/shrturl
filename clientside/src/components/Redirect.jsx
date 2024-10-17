@@ -1,39 +1,79 @@
 import React, { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+
+import { useParams } from 'react-router-dom';
+
 import { useLinkStore } from "../store/link";
 
 const RedirectToTarget = () => {
 
-  const { short } = useParams();
+const { short } = useParams();
 
-  const { redirectToTarget } = useLinkStore();
+const { fetchLinks, Links, setLinks } = useLinkStore(); // Get fetch function, links, and a setter for links
 
-  const navigate = useNavigate();
+  useEffect(() => {
 
-	useEffect(() => {
+    // Clear the Links before fetching new data
 
-  const link = redirectToTarget(short);
+    setLinks([]); // Reset the state to ensure fresh data fetch
 
-  if (link) {
+    fetchLinks().then(() => {
 
-    // Redirect to the target URL if found
+      console.log("Links fetched successfully.");
 
-    console.log("Happy");
+    }).catch((error) => {
 
-  } 
-  
-  else {
+      console.error("Error fetching links:", error);
 
+    });
+
+  }, [short, fetchLinks, setLinks]);
+
+  useEffect(() => {
+
+    // Ensure Links is an array and short is defined
+
+    if (short && Array.isArray(Links) && Links.length > 0) {
+
+      console.log("Searching for the short link:", short);
+
+      // Find the link object that matches the short code
+
+      const foundLink = Links.find(link => link.short === short);
+
+      if (foundLink && foundLink.url) {
+
+        console.log("Found target URL:", foundLink.url);
+
+        let targetUrl = foundLink.url;
+
+      if (!/^https?:\/\//i.test(targetUrl)) {
+
+        targetUrl = `https://${targetUrl}`; // You can use https if that's preferable
+
+      }
+
+        window.location.href = targetUrl; // Redirect the user to the target URL
+        
+      } else {
+
+        console.error("Short link not found or no target URL available for:", short);
+
+        // Optionally, display a message or navigate to a 'not found' page
+
+      }
+    } 
     
-    console.log("links:", "Not found");
+    else {
 
-}
+      console.log("Short or Links are not ready yet.");
 
-}, [short, redirectToTarget, navigate]);
+    }
+  }, [short, Links]);
 
 
-  return <div>Redirecting...</div>;
+       return <div className='p-3'>Redirecting...</div>;
 
-};
+    };
+
 
 export default RedirectToTarget;

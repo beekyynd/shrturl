@@ -9,6 +9,10 @@ import HomePage from "./pages/HomePage";
 
 import Navbar from "./components/Navbar";
 
+import Footer from "./components/Footer";
+
+import RedirectToTarget from "./components/Redirect";
+
 function App() {
 
   return (
@@ -23,9 +27,15 @@ function App() {
 
         <Route path="/create" element={<CreatePage />} />
 
+        <Route path='/:short' element={ <RedirectToTarget /> }/>
+
       </Routes>
 
-    </Box></>
+    </Box>
+    
+    <Footer />
+    
+    </>
 
 
   )

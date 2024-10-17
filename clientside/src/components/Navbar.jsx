@@ -36,12 +36,6 @@ const Navbar = () => {
 
 <li className="nav-item ms-3">
 
-    <a className="nav-link" href="#">Login</a>
-
-</li>
-
-<li className="nav-item ms-3">
-
     <button type='button' className='rounded btn btn-primary btn-sm mt-1'>Get Started</button>
 
 </li>

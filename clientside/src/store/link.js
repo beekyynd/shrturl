@@ -46,33 +46,18 @@ export const useLinkStore = create((set) => ({
         try {
 
           const res = await fetch(`/api/links/${short}`);
+
+		  const data = await res.json();
+
+		  set({ ShortUrl: data.data });
       
-          if (!res.ok) {
-
-            throw new Error("Failed to fetch link.");
-
-          }
-      
-          const data = await res.json();
-      
-          if (data?.data?.url) {
-
-            // Redirect the user to the target URL if it exists
-
-            window.location.href = data.data.url;
-
-          } else {
-
-            console.error("No target URL found for this short link.");
-
-          }
-
         } catch (error) {
 
           console.error("An error occurred while fetching the link:", error);
 
         }
       },
+
 
 	deleteLink: async (pid) => {
 

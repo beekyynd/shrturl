@@ -2,6 +2,8 @@ import express from "express";
 
 import dotenv from "dotenv";
 
+import cors from "cors";
+
 import path from "path";
 
 import { connectDB } from "./config/db.js";
@@ -13,6 +15,8 @@ dotenv.config();
 const app = express();
 
 app.use(express.json()); // allows us to accept JSON data in the req.body
+
+app.use(cors());
 
 const PORT = process.env.PORT || 5000; // 5000 in case it was not added in env file
 

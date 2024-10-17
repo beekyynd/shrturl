@@ -2,7 +2,7 @@
 
   "scripts": {
 
-    "dev": "nodemon serverside/main.js",
+    "dev": "NODE_ENV=development nodemon serverside/main.js",
 
     "build": "npm install && npm install --prefix clientside && npm run build --prefix clientside",
 

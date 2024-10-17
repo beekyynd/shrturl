@@ -213,3 +213,15 @@ input {
   font-size: 14px;
 
 }
+
+/* Footer */
+
+.footer {
+
+  background-color: black;
+
+  color: #fff;
+
+  text-align: center;
+  
+}

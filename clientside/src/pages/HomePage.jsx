@@ -140,7 +140,7 @@ const HomePage = () => {
 
       <div className='col-lg-6 col-md-5 col-sm-12 mt-3'>
 
-        <h3 className='h-bold'>Shrt.ng short URL & QR <br/>code generator</h3>
+        <h3 className='h-bold'>Free short URL & <br/>Link generator</h3>
 
         <p>A short url allows you to collect so much information about your customers and their behaviour</p>
 
@@ -208,7 +208,7 @@ const HomePage = () => {
 
         {isLinkGenerated 
 
-          ? <span id='show-shrt'>Your short link is : <i className='text-primary'>https://shrt.com.ng/{newLink.short}</i></span>
+          ? <span id='show-shrt'>Your short link is : <i className='text-primary'>{window.location.protocol}//{window.location.hostname}/{newLink.short}</i></span>
 
           : <span>One <i className='text-muted'>shrt.com.ng/link</i> infinite possibilities</span>}
 
