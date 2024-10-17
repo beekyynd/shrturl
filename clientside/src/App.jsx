@@ -25,8 +25,6 @@ function App() {
 
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/create" element={<CreatePage />} />
-
         <Route path='/:short' element={ <RedirectToTarget /> }/>
 
       </Routes>
