@@ -1,6 +1,6 @@
 ![Screenshot 2024-10-18 00 59 19](https://github.com/user-attachments/assets/ef0d9c7c-a8ee-4b0f-9af8-766d239afe74)
 
-This is a simple URL shortener built using the following:
+This is a simple URL shortener built and designed from scratch using the following:
 
 1. React
 2. Express Js
