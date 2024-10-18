@@ -40,45 +40,4 @@ export const useLinkStore = create((set) => ({
 		set({ Links: data.data });
 
 	},
-
-	deleteLink: async (pid) => {
-
-		const res = await fetch(`/api/links/${pid}`, {
-
-			method: "DELETE",
-
-		});
-
-		const data = await res.json();
-
-		if (!data.success) return { success: false, message: data.message };
-
-		// update the ui immediately, without needing a refresh
-
-		set((state) => ({ links: state.links.filter((link) => link._id !== pid) }));
-
-		return { success: true, message: data.message };
-	},
-
-	updateLink: async (pid, updatedLink) => {
-
-		const res = await fetch(`/api/links/${pid}`, {
-            
-			method: "PUT",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(updatedLink),
-		});
-
-		const data = await res.json();
-		if (!data.success) return { success: false, message: data.message };
-
-		// update the ui immediately, without needing a refresh
-		set((state) => ({
-			links: state.links.map((link) => (link._id === pid ? data.data : link)),
-		}));
-
-		return { success: true, message: data.message };
-	},
 }));
