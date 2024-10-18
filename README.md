@@ -11,7 +11,7 @@ The user inrerface was designed using Bootstrap and Chakra UI. This URL Shortene
 
 you to the target URL.
 
-Try it out, it is free and open source.
+Try it out on a live url https://shrturl-058m.onrender.com/, it is free and open source.
 
 ![Screenshot 2024-10-18 01 00 02](https://github.com/user-attachments/assets/39bf5f4b-7c76-441b-b81b-c7cf50143388)
 ![Screenshot 2024-10-18 00 59 33](https://github.com/user-attachments/assets/55dc4bf6-447f-4bf0-b17f-ca9cd6965e48)
