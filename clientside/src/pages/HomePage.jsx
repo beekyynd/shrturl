@@ -12,6 +12,8 @@ import { BiCustomize } from "react-icons/bi";
 
 import { useLinkStore } from "../store/link";
 
+import { isValidUrl } from '../validation/validation';
+
 const HomePage = () => {
 
   const [newLink, setNewLink] = useState({
@@ -69,7 +71,26 @@ const HomePage = () => {
 
       return;
       
-      } 
+      }
+
+      else {
+        
+        if (!isValidUrl(newLink.url)) {
+    
+        toast({
+        
+        title: "Error",
+        description: "Enter a valid url",
+        status: "error",
+        isClosable: true,
+        });
+  
+        return;
+        
+        } 
+
+      }
+  
 
     try {
   

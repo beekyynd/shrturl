@@ -41,24 +41,6 @@ export const useLinkStore = create((set) => ({
 
 	},
 
-    redirectToTarget: async (short) => {
-
-        try {
-
-          const res = await fetch(`/api/links/${short}`);
-
-		  const data = await res.json();
-
-		  set({ ShortUrl: data.data });
-      
-        } catch (error) {
-
-          console.error("An error occurred while fetching the link:", error);
-
-        }
-      },
-
-
 	deleteLink: async (pid) => {
 
 		const res = await fetch(`/api/links/${pid}`, {
